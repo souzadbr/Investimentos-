@@ -2,9 +2,9 @@ package br.com.zup.Aplicacao.Aplicação;
 
 public enum Risco {
 
-    ALTO (0.25),
-    MÉDIO(0.15),
-    BAIXO(0.05);
+    ALTO (0.025),
+    MÉDIO(0.015),
+    BAIXO(0.005);
 
     private double taxa;
 
