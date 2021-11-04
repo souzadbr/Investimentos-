@@ -17,8 +17,9 @@ public class InvestimentoController {
 
     @PutMapping
     @ResponseStatus (HttpStatus.CREATED)
-    public void salvarInvestimento(@RequestBody @Valid InvestimentoDTO investimentoDTO){
-        investimentoService.salvarInvestimento(investimentoDTO);
+    public ResultadoInvestimentoDTO salvarInvestimento(@RequestBody @Valid InvestimentoDTO investimentoDTO){
+      ResultadoInvestimentoDTO resultadoInvestimentoDTO =  investimentoService.salvarInvestimento(investimentoDTO);
+        return ResultadoInvestimentoDTO;
     }
 
     @GetMapping
@@ -27,6 +28,7 @@ public class InvestimentoController {
     }
 
 
-
-
 }
+
+
+

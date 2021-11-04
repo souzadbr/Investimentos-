@@ -12,9 +12,10 @@ public class InvestimentoService {
     private List<InvestimentoDTO> resultadoDTOS = new ArrayList<>();
 
     //Método salvar investimento na lista
-    public void salvarInvestimento(InvestimentoDTO investimentoDTO){
+    public ResultadoInvestimentoDTO salvarInvestimento(InvestimentoDTO investimentoDTO){
         calcularTotal(investimentoDTO.getValorPrevisto(), investimentoDTO.getPeriodoDeAplicacaoMeses(), investimentoDTO.getRisco());
         resultadoDTOS.add(investimentoDTO);
+        return ResultadoInvestimentoDTO ;
     }
 
 
@@ -36,13 +37,12 @@ public class InvestimentoService {
         return lucro;
     }
 
-   //Método que valida valor para aplicação de altoRisco
-    public void validarValorParaInvestimentoAltoRisco (){
-       double valorInvestido;
-       if(valorInvestido<5000){
-           throw new 
-       }
+   //Método que retorna todo o calculo
+    public ResultadoInvestimentoDTO resultadoInvestimentoDTO (){
+        ResultadoInvestimentoDTO resultadoInvestimentoDTO = new ResultadoInvestimentoDTO();
+        return resultadoInvestimentoDTO;
     }
+
 
 
 
