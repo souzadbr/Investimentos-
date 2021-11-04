@@ -1,8 +1,14 @@
 package br.com.zup.Aplicacao.Aplicação;
 
+import org.hibernate.validator.constraints.br.CPF;
+
+import javax.validation.constraints.Email;
+
 public class InvestimentoDTO {
+    @Email (message = "E-mail inválido tente novamente!")
     private String email;
     private String nome;
+    @CPF (message = "CPF inválido!Tente novamente")
     private String CPF;
     private double valorPrevisto;
     private int periodoDeAplicacaoMeses;
