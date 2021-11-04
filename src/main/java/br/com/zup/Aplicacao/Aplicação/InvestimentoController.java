@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/investimento")
 public class InvestimentoController {
@@ -19,7 +21,7 @@ public class InvestimentoController {
     }
 
     @GetMapping
-    public InvestimentoDTO realizarSimulacao (@ResponseBody ResultadoInvestimentoDTO){
+    public List<InvestimentoDTO> verificarSimulação(@ResponseBody ResultadoInvestimentoDTO){
         return investimentoService.retornarListaDeInvestimentos();
     }
 

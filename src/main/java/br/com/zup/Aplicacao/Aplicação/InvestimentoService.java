@@ -24,9 +24,9 @@ public class InvestimentoService {
         return valorTotalDoLucro;
     }
 
-    //Método que mostra resultados dentra da lista de investimentos
-     public InvestimentoDTO retornarListaDeInvestimentos (){
-        return (InvestimentoDTO) resultadoDTOS;
+    //Método que mostra resultados dentro da lista de investimentos
+     public List<InvestimentoDTO> retornarListaDeInvestimentos (){
+        return resultadoDTOS;
      }
 
 
