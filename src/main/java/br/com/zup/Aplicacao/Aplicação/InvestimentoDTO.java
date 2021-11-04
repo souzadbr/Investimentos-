@@ -4,15 +4,18 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import java.beans.XMLEncoder;
 
 public class InvestimentoDTO {
+    @NotEmpty (message = "Campo do e-mail está vazio")
     @Email (message = "E-mail inválido tente novamente!")
     private String email;
     private String nome;
     @CPF (message = "CPF inválido!Tente novamente")
     private String cpf;
     private double valorInvestido;
-    @Min(2)
+    @Min(value = 2, message = "Colocar no minimo 2 meses de investimento")
     private int periodoDeAplicacaoMeses;
     private Risco risco;
 

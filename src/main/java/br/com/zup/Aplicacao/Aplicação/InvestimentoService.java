@@ -48,7 +48,11 @@ public class InvestimentoService {
         return resultadoInvestimentoDTO;
     }
 
+    //Método para validar aplicações para alto Risco
 
+    public void verificarAplicacaoAltoRisco(){
+
+    }
 
 
 
