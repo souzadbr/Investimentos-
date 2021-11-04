@@ -17,6 +17,7 @@ public class InvestimentoService {
         resultadoDTOS.add(investimentoDTO);
     }
 
+
     //Método de calcular valor rendido no invetimento em sua totalidade
     public double calcularTotal(double valorInvestido, int periodoDeAplicacaoMeses, Risco risco) {
         double meses = periodoDeAplicacaoMeses;
@@ -35,6 +36,13 @@ public class InvestimentoService {
         return lucro;
     }
 
+   //Método que valida valor para aplicação de altoRisco
+    public void validarValorParaInvestimentoAltoRisco (){
+       double valorInvestido;
+       if(valorInvestido<5000){
+           throw new 
+       }
+    }
 
 
 
