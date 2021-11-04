@@ -29,6 +29,12 @@ public class InvestimentoService {
         return resultadoDTOS;
      }
 
+     //Método que calcula o lucro
+    public double calcularLucro (double valorInvestido, double valorTotalDoLucro){
+        double lucro = valorTotalDoLucro - valorInvestido;
+        return lucro;
+    }
+
 
 
 
