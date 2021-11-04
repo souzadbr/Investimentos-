@@ -13,9 +13,14 @@ public class InvestimentoService {
 
     //Método salvar investimento na lista
     public ResultadoInvestimentoDTO salvarInvestimento(InvestimentoDTO investimentoDTO){
-        calcularTotal(investimentoDTO.getValorPrevisto(), investimentoDTO.getPeriodoDeAplicacaoMeses(), investimentoDTO.getRisco());
+        double total = calcularTotal(investimentoDTO.getValorInvestido(), investimentoDTO.getPeriodoDeAplicacaoMeses(), investimentoDTO.getRisco());
+        double lucros = calcularLucro(investimentoDTO.getValorInvestido(),total);
+        ResultadoInvestimentoDTO resultadoInvestimentoDTO = new ResultadoInvestimentoDTO();
+        resultadoInvestimentoDTO.setValorInvestido(investimentoDTO.getValorInvestido());
+        resultadoInvestimentoDTO.setValorTotal(total);
+        resultadoInvestimentoDTO.setValorTotalDoLucro(lucros);
         resultadoDTOS.add(investimentoDTO);
-        return ResultadoInvestimentoDTO ;
+        return resultadoInvestimentoDTO ;
     }
 
 

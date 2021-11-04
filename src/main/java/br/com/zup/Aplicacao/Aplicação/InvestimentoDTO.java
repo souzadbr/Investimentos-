@@ -10,8 +10,8 @@ public class InvestimentoDTO {
     private String email;
     private String nome;
     @CPF (message = "CPF inválido!Tente novamente")
-    private String CPF;
-    private double valorPrevisto;
+    private String cpf;
+    private double valorInvestido;
     @Min(2)
     private int periodoDeAplicacaoMeses;
     private Risco risco;
@@ -35,20 +35,20 @@ public class InvestimentoDTO {
         this.nome = nome;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public double getValorPrevisto() {
-        return valorPrevisto;
+    public double getValorInvestido() {
+        return valorInvestido;
     }
 
-    public void setValorPrevisto(double valorPrevisto) {
-        this.valorPrevisto = valorPrevisto;
+    public void setValorInvestido(double valorInvestido) {
+        this.valorInvestido = valorInvestido;
     }
 
     public int getPeriodoDeAplicacaoMeses() {
