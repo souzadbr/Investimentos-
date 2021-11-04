@@ -1,6 +1,6 @@
 package br.com.zup.Aplicacao.Aplicação;
 
-public class Investimento {
+public class InvestimentoDTO {
     private String email;
     private String nome;
     private String CPF;
@@ -8,7 +8,7 @@ public class Investimento {
     private int periodoDeAplicacaoMeses;
     private Risco risco;
 
-    public Investimento() {
+    public InvestimentoDTO() {
     }
 
     public String getEmail() {
