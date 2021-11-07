@@ -1,5 +1,6 @@
 package br.com.zup.Aplicacao.Aplicação.service;
 
+import br.com.zup.Aplicacao.Aplicação.ValorBaixoParaRiscoALtoException;
 import br.com.zup.Aplicacao.Aplicação.enums.Risco;
 import br.com.zup.Aplicacao.Aplicação.dto.InvestimentoDTO;
 import br.com.zup.Aplicacao.Aplicação.dto.ResultadoInvestimentoDTO;
@@ -18,12 +19,21 @@ public class InvestimentoService {
     public ResultadoInvestimentoDTO salvarInvestimento(InvestimentoDTO investimentoDTO){
         double total = calcularTotal(investimentoDTO.getValorInvestido(), investimentoDTO.getPeriodoDeAplicacaoMeses(), investimentoDTO.getRisco());
         double lucros = calcularLucro(investimentoDTO.getValorInvestido(),total);
+
+        verificarValorERisco(investimentoDTO);  //Validação para investimentoaltoRisco
         ResultadoInvestimentoDTO resultadoInvestimentoDTO = new ResultadoInvestimentoDTO();
         resultadoInvestimentoDTO.setValorInvestido(investimentoDTO.getValorInvestido());
         resultadoInvestimentoDTO.setValorTotal(total);
         resultadoInvestimentoDTO.setValorTotalDoLucro(lucros);
+
         resultadoDTOS.add(investimentoDTO);
         return resultadoInvestimentoDTO ;
+    }
+
+    private void verificarValorERisco(InvestimentoDTO investimentoDTO){
+        if(investimentoDTO.getRisco() == Risco.ALTO && investimentoDTO.getValorInvestido() <5000){
+            throw new ValorBaixoParaRiscoALtoException("Valor muito baixo para risco alto");
+        }
     }
 
 
@@ -52,9 +62,7 @@ public class InvestimentoService {
         return resultadoInvestimentoDTO;
     }
 
-    //Método para validar aplicações para alto Risco
 
-    public void verificarAplicacaoAltoRisco(){}
 
 
 
