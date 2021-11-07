@@ -1,5 +1,8 @@
-package br.com.zup.Aplicacao.Aplicação;
+package br.com.zup.Aplicacao.Aplicação.service;
 
+import br.com.zup.Aplicacao.Aplicação.enums.Risco;
+import br.com.zup.Aplicacao.Aplicação.dto.InvestimentoDTO;
+import br.com.zup.Aplicacao.Aplicação.dto.ResultadoInvestimentoDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,8 +31,9 @@ public class InvestimentoService {
     public double calcularTotal(double valorInvestido, int periodoDeAplicacaoMeses, Risco risco) {
         double meses = periodoDeAplicacaoMeses;
         double valorTotalDoLucro =  (valorInvestido * (risco.getTaxa()+1))*meses ;
-        return valorTotalDoLucro;
+         return valorTotalDoLucro;
     }
+
 
     //Método que mostra resultados dentro da lista de investimentos
      public List<InvestimentoDTO> retornarListaDeInvestimentos (){
@@ -50,9 +54,7 @@ public class InvestimentoService {
 
     //Método para validar aplicações para alto Risco
 
-    public void verificarAplicacaoAltoRisco(){
-
-    }
+    public void verificarAplicacaoAltoRisco(){}
 
 
 

@@ -1,4 +1,4 @@
-package br.com.zup.Aplicacao.Aplicação;
+package br.com.zup.Aplicacao.Aplicação.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -15,11 +15,13 @@ public class ControllerAdvisor {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public List<MensagemError>excessoesValidacoes (MethodArgumentNotValidException exception){
+    public List<MensagemError> manipulacaoValidacoes(MethodArgumentNotValidException exception){
         List<MensagemError>mensagens = new ArrayList<>();
 
         for (FieldError fieldError : exception.getFieldErrors()) {
-            mensagens.add(new MensagemError(fieldError.getDefaultMessage()));
+            MensagemError mensagemError = new MensagemError(fieldError.getField(), fieldError.getDefaultMessage());
+            mensagens.add(mensagemError);
+
         }
         return mensagens;
     }

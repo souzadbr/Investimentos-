@@ -1,7 +1,9 @@
-package br.com.zup.Aplicacao.Aplicação;
+package br.com.zup.Aplicacao.Aplicação.controller;
 
+import br.com.zup.Aplicacao.Aplicação.dto.InvestimentoDTO;
+import br.com.zup.Aplicacao.Aplicação.dto.ResultadoInvestimentoDTO;
+import br.com.zup.Aplicacao.Aplicação.service.InvestimentoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -16,7 +18,7 @@ public class InvestimentoController {
     private InvestimentoService investimentoService;
 
     @PutMapping
-    public ResultadoInvestimentoDTO salvarInvestimento(@RequestBody @Valid InvestimentoDTO investimentoDTO){
+    public ResultadoInvestimentoDTO simularInvestimento(@RequestBody @Valid InvestimentoDTO investimentoDTO){
       ResultadoInvestimentoDTO resultadoInvestimentoDTO =  investimentoService.salvarInvestimento(investimentoDTO);
         return resultadoInvestimentoDTO;
     }

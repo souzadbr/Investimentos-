@@ -1,11 +1,11 @@
-package br.com.zup.Aplicacao.Aplicação;
+package br.com.zup.Aplicacao.Aplicação.dto;
 
+import br.com.zup.Aplicacao.Aplicação.enums.Risco;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import java.beans.XMLEncoder;
 
 public class InvestimentoDTO {
     @NotEmpty (message = "Campo do e-mail está vazio")
